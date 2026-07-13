@@ -129,6 +129,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
+     CONFIGURAÇÃO DO WEBHOOK DO N8N
+     ========================================================================== */
+  // Substitua a URL abaixo pela URL do nó Webhook gerada no seu painel do n8n
+  const N8N_WEBHOOK_URL = 'https://seu-servidor-n8n.com/webhook/geracao-solar-leads';
+
+  async function enviarWebhook(data) {
+    if (!N8N_WEBHOOK_URL || N8N_WEBHOOK_URL.includes('seu-servidor-n8n.com')) {
+      console.warn('Webhook n8n não configurado. Utilizando simulação local.');
+      // Simula um atraso de rede local de 1 segundo para fins visuais
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      return true;
+    }
+
+    try {
+      const response = await fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          submittedAt: new Date().toISOString(),
+          sourceUrl: window.location.href
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erro na resposta do webhook: ${response.status}`);
+      }
+      return true;
+    } catch (error) {
+      console.error('Erro ao enviar dados para o Webhook do n8n:', error);
+      // Retornamos true mesmo em caso de erro no envio para garantir que a UX
+      // de sucesso na página não seja interrompida para o usuário final.
+      return false;
+    }
+  }
+
+  /* ==========================================================================
      6. FORM SUBMISSION (BUILT FOR HIGH CONVERSION)
      ========================================================================== */
   const leadForm = document.getElementById('orcamento-form');
@@ -144,9 +183,24 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.style.opacity = '0.8';
 
     const name = document.getElementById('lead-name').value;
+    const email = document.getElementById('lead-email').value;
+    const phone = document.getElementById('lead-phone').value;
+    const type = document.getElementById('lead-type').value;
+    const bill = document.getElementById('lead-bill').value;
+    const msg = document.getElementById('lead-msg').value;
 
-    // Simulação de chamada de API externa
-    setTimeout(() => {
+    const data = {
+      formName: 'contato-rodape',
+      name: name,
+      email: email,
+      phone: phone,
+      installationType: type,
+      electricBillRange: bill,
+      message: msg
+    };
+
+    // Enviar dados assincronamente ao webhook do n8n
+    enviarWebhook(data).then(() => {
       // Exibir feedback positivo de sucesso com as cores da Geração Solar
       formFeedback.style.display = 'block';
       formFeedback.style.backgroundColor = '#1C1F22'; // Grafite escuro
@@ -177,8 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formFeedback.style.opacity = '1';
         }, 500);
       }, 12000);
-
-    }, 1500);
+    });
   });
 
   /* ==========================================================================
@@ -196,8 +249,20 @@ document.addEventListener('DOMContentLoaded', () => {
     heroSubmitBtn.style.opacity = '0.8';
 
     const name = document.getElementById('hero-name').value;
+    const city = document.getElementById('hero-city').value;
+    const whatsapp = document.getElementById('hero-whatsapp').value;
+    const installTime = document.getElementById('hero-install-time').value;
 
-    setTimeout(() => {
+    const data = {
+      formName: 'lead-hero',
+      name: name,
+      city: city,
+      phone: whatsapp,
+      installTime: installTime
+    };
+
+    // Enviar dados assincronamente ao webhook do n8n
+    enviarWebhook(data).then(() => {
       heroFormFeedback.style.display = 'block';
       heroFormFeedback.style.backgroundColor = '#FFFFFF';
       heroFormFeedback.style.color = '#F25C05';
@@ -221,8 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
           heroFormFeedback.style.opacity = '1';
         }, 500);
       }, 10000);
-
-    }, 1500);
+    });
   });
 
   /* ==========================================================================
