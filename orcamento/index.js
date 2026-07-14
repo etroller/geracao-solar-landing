@@ -425,69 +425,68 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   const PROJETOS_DADOS = [
     {
-      img: '../assets/Projetos Concluídos/DJI_0713-Copia.jpg.webp',
-      cidade: 'Westfália - RS',
-      tipo: 'Residencial',
-      potencia: '7,2 kWp',
-      tag: 'residencial'
+      img: '../assets/Projetos Concluídos/hotel.webp',
+      cidade: 'Lajeado - RS',
+      tipo: 'Comercial',
+      potencia: '41,86 kWp',
+      tag: 'comercial'
     },
     {
       img: '../assets/Projetos Concluídos/DJI_0320-scaled-e1631833665750.jpg.webp',
       cidade: 'Westfália - RS',
       tipo: 'Comercial',
-      potencia: '45,72 kWp',
+      potencia: '12,4 kWp',
       tag: 'comercial'
+    },
+    {
+      img: '../assets/Projetos Concluídos/DJI_0713-Copia.jpg.webp',
+      cidade: 'Westfália - RS',
+      tipo: 'Residencial',
+      potencia: '52,65 kWp',
+      tag: 'residencial'
     },
     {
       img: '../assets/Projetos Concluídos/DJI_0727-Copia.jpg.webp',
       cidade: 'Lajeado - RS',
       tipo: 'Comercial',
-      potencia: '19,2 kWp',
+      potencia: '78,3 kWp',
       tag: 'comercial'
     },
     {
       img: '../assets/Projetos Concluídos/DJI_0741-Copia.jpg.webp',
-      cidade: 'Forquetinha - RS',
+      cidade: 'Estrela - RS',
       tipo: 'Comercial',
-      potencia: '13,5 kWp',
+      potencia: '22,8 kWp',
       tag: 'comercial'
     },
     {
       img: '../assets/Projetos Concluídos/Geovanne-foto-post-1024x750.jpg.webp',
       cidade: 'Roca Sales - RS',
       tipo: 'Residencial',
-      potencia: '7,04 kWp',
+      potencia: '8,8 kWp',
       tag: 'residencial'
     },
     {
       img: '../assets/Projetos Concluídos/WhatsApp Image 2023-06-26 at 16.07.38.jpeg',
       cidade: 'Lajeado - RS',
       tipo: 'Residencial',
-      potencia: '4,4 kWp',
+      potencia: '34,2 kWp',
       tag: 'residencial'
     },
     {
       img: '../assets/Projetos Concluídos/WhatsApp Image 2023-07-10 at 22.55.20 (1).jpeg',
       cidade: 'Muçum - RS',
       tipo: 'Residencial',
-      potencia: '10,8 kWp',
+      potencia: '15,6 kWp',
       tag: 'residencial'
     },
     {
       img: '../assets/Projetos Concluídos/aoCt9Q7.jpg',
       cidade: 'Lajeado - RS',
       tipo: 'Comercial',
-      potencia: '20,06 kWp',
+      potencia: '18,5 kWp',
       tag: 'comercial'
-    },
-    {
-      img: '../assets/Projetos Concluídos/hotel.webp',
-      cidade: 'Lajeado - RS',
-      tipo: 'Comercial',
-      potencia: '41,86 kWp',
-      tag: 'comercial'
-    }
-  ];
+    }  ];
 
   const carouselTrack = document.getElementById('carousel-track');
   const prevBtn = document.getElementById('carousel-prev');
