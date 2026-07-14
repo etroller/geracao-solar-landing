@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artigos técnicos e guias sobre energia solar no Rio Grande do Sul. Entenda a homologação na Certel e RGE, financiamentos do Sicredi/Cresol e payback da Lei 14.300.">
+  <meta name="keywords" content="blog energia solar rs, lei 14300 rs, certel parecer de acesso, rge energia solar homologacao, sicredi financiamento solar">
+  <meta name="author" content="Geração Solar Engenharia">
+  
+  <title>Artigos & Guias de Engenharia Solar | Geração Solar RS</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23121416%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23FFC815%22/><path d=%22M 50 10 L 50 90 M 10 50 L 90 50%22 stroke=%22%23F25C05%22 stroke-width=%226%22/></svg>">
+
+  <style>
+    .article-section {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+    .article-section h2 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .article-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .article-section p {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--text-muted-dark);
+      margin-bottom: 16px;
+    }
+    .article-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-muted-dark);
+      line-height: 1.7;
+    }
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted-dark);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER / NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/g1.jpg" alt="Geração Solar Engenharia Logo">
+      </a>
+      
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="index.html" class="navbar-link">Início</a>
+        <a href="projetos.html" class="navbar-link">Projetos</a>
+        <a href="artigos.html" class="navbar-link active">Artigos & SEO</a>
+        <a href="index.html#simulador" class="navbar-link">Simulador</a>
+        <a href="#contato" class="navbar-link">Contato</a>
+      </nav>
+      
+      <div class="navbar-actions">
+        <div class="navbar-social-links">
+          <a href="https://facebook.com/geracaosolarengenharia" target="_blank" rel="noopener" class="navbar-social-icon" aria-label="Siga-nos no Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h3V1h-4c-3.3 0-6 2.7-6 6v1z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/geracaosolarengenharia" target="_blank" rel="noopener" class="navbar-social-icon" aria-label="Siga-nos no Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </div>
+        <a href="orcamento/index.html" class="btn btn-orange navbar-cta">Orçamento Rápido</a>
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu de Navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BLOG HERO
+       ========================================================================== -->
+  <section class="section section-light" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="section-tag" style="background-color: rgba(242,92,5,0.08); color: var(--accent-orange); font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 16px;">Conhecimento & Engenharia</span>
+        <h1 style="font-family: var(--font-title); font-size: 2.8rem; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">Artigos e Guias sobre Energia Solar no RS</h1>
+        <p style="color: var(--text-muted-dark); font-size: 1.1rem; line-height: 1.6;">
+          Preparamos guias técnicos detalhados com foco na realidade das concessionárias locais (Certel Cooperativa e RGE Sul) e linhas de financiamento para o Vale do Taquari.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ARTICLES LIST CONTAINER
+       ========================================================================== -->
+  <section class="section section-light" style="padding: 20px 0 80px 0;">
+    <div class="container" style="max-width: 900px;">
+      
+      <!-- Artigo 1 -->
+      <article class="article-section" id="homologacao-certel-rge">
+        <h2>Como homologar energia solar na Certel e RGE sem atrasos</h2>
+        <div class="article-meta">
+          <span>📅 Publicado em: Julho de 2026</span>
+          <span>⏱ Leitura: 5 min</span>
+          <span>🏷 Categoria: Homologação no RS</span>
+        </div>
+        <p>
+          A instalação física dos painéis solares e do inversor é apenas metade da jornada em direção à economia de energia. A outra metade, e muitas vezes a mais complexa, é o processo de homologação técnica junto à concessionária de energia que atende seu imóvel no <strong>Rio Grande do Sul</strong> (normalmente a <strong>RGE Sul</strong> ou a <strong>Certel Cooperativa</strong> no Vale do Taquari).
+        </p>
+        <p>
+          O Parecer de Acesso é o documento legal no qual a concessionária atesta que a rede de distribuição local tem capacidade de receber a energia gerada pela sua usina solar. Sem este parecer e sem a vistoria final, o seu relógio bidirecional não é instalado e você não pode ligar legalmente o sistema.
+        </p>
+        <h3>Principais documentos exigidos:</h3>
+        <ul>
+          <li><strong>ART/TRT:</strong> Anotação de Responsabilidade Técnica assinada por Engenheiro Eletricista devidamente registrado no CREA-RS.</li>
+          <li><strong>Diagramas Unifilares:</strong> Desenho técnico detalhando as conexões elétricas, proteções e inversor.</li>
+          <li><strong>Certificados de Conformidade:</strong> Certificados do Inmetro atestando a qualidade dos painéis e do inversor.</li>
+        </ul>
+        <p>
+          <strong>Diferença de prazos locais:</strong> A cooperativa Certel possui regras operacionais ágeis para a região de Lajeado e Teutônia, mas exige vistoria presencial minuciosa de aterramento. Já a RGE segue os prazos máximos da regulamentação da ANEEL (5 a 15 dias para análise do parecer), mas rejeita projetos que apresentem qualquer divergência nas coordenadas geográficas de localização ou diagramas.
+        </p>
+        <p>
+          Trabalhar com uma engenharia local de Lajeado garante que qualquer notificação ou correção exigida seja sanada em poucas horas por nossa equipe, sem travar o andamento da sua obra.
+        </p>
+      </article>
+
+      <!-- Artigo 2 -->
+      <article class="article-section" id="financiamento-solar-rs">
+        <h2>Linhas de crédito no RS: As taxas do Sicredi, Banco do Brasil e Cresol</h2>
+        <div class="article-meta">
+          <span>📅 Publicado em: Julho de 2026</span>
+          <span>⏱ Leitura: 4 min</span>
+          <span>🏷 Categoria: Financiamento</span>
+        </div>
+        <p>
+          Com o aumento constante da inflação energética no Rio Grande do Sul, financiar a instalação de placas solares tornou-se uma das formas mais inteligentes de investimento: as parcelas do financiamento costumam ser equivalentes à economia imediata gerada na conta de luz, fazendo com que o projeto se pague sozinho.
+        </p>
+        <p>
+          No interior do RS e no Vale do Taquari, as cooperativas de crédito de base local possuem as taxas mais competitivas para projetos solares:
+        </p>
+        <h3>1. Sicredi (Linha de Crédito Energia Solar)</h3>
+        <p>
+          Com forte presença local, o Sicredi financia até 100% do projeto (equipamentos e instalação) com prazos de até 120 meses. As taxas variam conforme o perfil do cooperado, mas estão entre as mais baratas para o setor comercial e residencial do sul.
+        </p>
+        <h3>2. Cresol (Crédito Agro e Pessoas Físicas)</h3>
+        <p>
+          Para o produtor rural (avicultores e produtores de leite da região), a Cresol oferece taxas muito atrativas focadas no agronegócio e sustentabilidade, com carências estendidas para se adequar ao ciclo de safras e vendas de produtos.
+        </p>
+        <h3>3. Banco do Brasil (FCO / PRONAF Eco)</h3>
+        <p>
+          O PRONAF Eco do Banco do Brasil é a principal linha nacional de incentivo para a agricultura familiar com juros subsidiados. É ideal para pequenos produtores que desejam zerar os custos de eletricidade da ordenha ou refrigeração de galpões rústicos.
+        </p>
+        <p>
+          Nossos engenheiros auxiliam você em todo o processo de emissão do laudo técnico necessário para apresentar ao seu gerente bancário, facilitando e agilizando a liberação do recurso.
+        </p>
+      </article>
+
+      <!-- Artigo 3 -->
+      <article class="article-section" id="retorno-lei-14300">
+        <h2>Como calcular o Payback Solar no RS sob as regras da Lei 14.300</h2>
+        <div class="article-meta">
+          <span>📅 Publicado em: Julho de 2026</span>
+          <span>⏱ Leitura: 6 min</span>
+          <span>🏷 Categoria: Legislação e Tarifa</span>
+        </div>
+        <p>
+          A famosa "taxação do sol" instituída pela Lei 14.300/22 mudou a forma de calcular o retorno sobre o investimento fotovoltaico, mas a energia solar continua sendo extremamente rentável no Rio Grande do Sul.
+        </p>
+        <p>
+          A lei estabelece a cobrança escalonada do chamado <strong>Fio B</strong> (tarifa de uso do sistema de distribuição) sobre a energia que é injetada na rede. Em 2026, a cobrança atinge o patamar de 60% do valor do Fio B da distribuidora elétrica.
+        </p>
+        <h3>Como funciona o cálculo simplificado:</h3>
+        <ul>
+          <li><strong>Autoconsumo Direto:</strong> Toda energia que você gera e consome imediatamente no seu imóvel (durante o dia) é 100% livre de encargos ou taxas adicionais.</li>
+          <li><strong>Energia Injetada (Créditos):</strong> Apenas a energia injetada na rede elétrica (excedente gerado ao longo do dia) sofre o abatimento percentual do Fio B ao ser consumida à noite.</li>
+          <li><strong>Isenção de ICMS no RS:</strong> O estado do Rio Grande do Sul mantém a isenção de ICMS sobre a energia compensada, o que melhora significativamente a rentabilidade em comparação com outros estados do país.</li>
+        </ul>
+        <p>
+          <strong>Tempo de Payback Médio (Retorno):</strong> Para residências normais no Vale do Taquari (contas entre R$ 400 e R$ 800), o payback situa-se em torno de <strong>3,5 a 4 anos</strong>. Para indústrias e agropecuárias com alta demanda, esse prazo pode cair para menos de <strong>3 anos</strong> devido à escala de consumo. Após esse período, toda a geração torna-se lucro líquido direto no seu bolso.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CTA BANNER SECTION
+       ========================================================================== -->
+  <section class="section" style="background-color: var(--bg-dark); color: var(--text-light); text-align: center; padding: 80px 0;">
+    <div class="container" style="max-width: 800px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <h2 style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 800; color: var(--text-light); margin: 0;">Fale com um especialista local</h2>
+      <p style="color: var(--text-muted-light); font-size: 1.05rem; margin: 0; line-height: 1.6;">
+        Tire suas dúvidas sobre homologação, investimentos ou dimensionamento de painéis diretamente com quem entende do Vale do Taquari.
+      </p>
+      <a href="orcamento/index.html" class="btn btn-yellow" style="padding: 16px 36px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em;">Solicitar Análise de Tarifa Grátis</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/g1 branco horizontal.png" alt="Geração Solar Engenharia Logo Branco" style="max-height: 50px;">
+          <p>
+            Engenharia de alto padrão especializada em projetos e instalação de sistemas fotovoltaicos no interior do Rio Grande do Sul.
+          </p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos Executados</a></li>
+            <li><a href="artigos.html">Artigos Educativos</a></li>
+            <li><a href="orcamento/index.html">Orçamento de Conversão</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Fale Conosco</h4>
+          <ul>
+            <li>
+              <strong>Telefone:</strong><br>
+              <a href="https://wa.me/5551985857422" target="_blank" rel="noopener">(51) 98585-7422</a>
+            </li>
+            <li>
+              <strong>Email:</strong><br>
+              <a href="mailto:contato@geracaosolarengenharia.com.br">contato@geracaosolarengenharia.com.br</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Sede Presencial</h4>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted-light); margin: 0;">
+            Av. Benjamin Constant, 851<br>
+            Lajeado - RS, CEP 95900-104
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Geração Solar Engenharia. Todos os direitos reservados.</p>
+        <p style="font-size: 0.75rem; margin-top: 4px; color: var(--text-muted-light);">CNPJ: 24.793.506/0001-63</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu sanduíche responsivo
+      const navbarToggle = document.getElementById('navbar-toggle');
+      const navbarMenu = document.getElementById('navbar-menu');
+
+      if (navbarToggle && navbarMenu) {
+        navbarToggle.addEventListener('click', () => {
+          navbarToggle.classList.toggle('active');
+          navbarMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
