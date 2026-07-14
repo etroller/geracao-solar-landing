@@ -54,7 +54,7 @@
           </a>
         </div>
         
-        <a href="orcamento/index.html" class="btn btn-orange navbar-cta">Orçamento Rápido</a>
+        <a href="#orcamento" class="btn btn-orange navbar-cta">Orçamento Rápido</a>
         <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu de Navegação">
           <span></span>
           <span></span>
@@ -89,7 +89,7 @@
         </h2>
         
         <div class="hero-ctas" style="justify-content: center; width: 100%;">
-          <a href="orcamento/index.html" class="btn btn-primary hero-btn-important">Solicitar Orçamento Gratuito</a>
+          <a href="#orcamento" class="btn btn-primary hero-btn-important">Solicitar Orçamento Gratuito</a>
           <a href="#simulador" class="btn btn-secondary hero-btn-secondary" style="border: 2px solid var(--accent-orange); color: var(--accent-orange); background: transparent; padding: 16px 32px; font-weight: 700; border-radius: var(--border-radius); transition: var(--transition-fast);">Simular Economia</a>
         </div>
         
@@ -293,7 +293,7 @@
           
           <div style="text-align: center; margin-top: 10px;">
             <p style="font-size: 0.78rem; color: var(--text-muted-dark); margin-bottom: 16px;">*Estimativa prévia baseado em irradiação local do RS e perdas padrão de sistema fotovoltaico de 18%.</p>
-            <a href="orcamento/index.html" class="btn btn-orange simulator-cta" style="width: 100%; display: block; text-transform: uppercase; font-weight: 800; padding: 16px 20px;">Garantir esta economia agora</a>
+            <a href="#orcamento" class="btn btn-orange simulator-cta" style="width: 100%; display: block; text-transform: uppercase; font-weight: 800; padding: 16px 20px;">Garantir esta economia agora</a>
           </div>
         </div>
       </div>
@@ -437,7 +437,96 @@
       <p style="color: var(--text-muted-light); font-size: 1.05rem; margin: 0; line-height: 1.6; max-width: 600px;">
         Receba uma análise gratuita de viabilidade feita diretamente pelo nosso Engenheiro Eletricista em Lajeado - RS.
       </p>
-      <a href="orcamento/index.html" class="btn btn-yellow" style="padding: 16px 36px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em;">Solicitar Orçamento Gratuito</a>
+      <a href="#orcamento" class="btn btn-yellow" style="padding: 16px 36px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em;">Solicitar Orçamento Gratuito</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT FORM SECTION (LEAD CAPTURE)
+       ========================================================================== -->
+  <section class="section section-light" id="orcamento" style="padding: 80px 0;">
+    <div class="container contact-grid">
+      <div class="contact-text-box reveal">
+        <span class="section-tag" style="background-color: rgba(242,92,5,0.08); color: var(--accent-orange); font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;">Orçamento Sem Compromisso</span>
+        <h3>Comece a poupar dinheiro hoje mesmo</h3>
+        <p class="text-muted" style="margin-bottom: 24px;">
+          Nosso Engenheiro Eletricista está de prontidão para realizar um pré-dimensionamento gratuito da sua usina solar. Preencha os campos a seguir e receba seu estudo em poucas horas.
+        </p>
+        
+        <div class="contact-channels">
+          <div class="contact-channel">
+            <div class="contact-channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <div class="contact-channel-text">
+              <p>Telefone / WhatsApp</p>
+              <p>(51) 98585-7422</p>
+            </div>
+          </div>
+          <div class="contact-channel">
+            <div class="contact-channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="contact-channel-text">
+              <p>Email Corporativo</p>
+              <p>contato@geracaosolarengenharia.com.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <form id="orcamento-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="lead-name" class="form-label">Seu Nome</label>
+              <input type="text" id="lead-name" class="form-input" placeholder="Ex: Rodrigo Santos" required>
+            </div>
+            <div class="form-group">
+              <label for="lead-email" class="form-label">Seu Email</label>
+              <input type="email" id="lead-email" class="form-input" placeholder="rodrigo@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="lead-phone" class="form-label">Telefone de Contato</label>
+              <input type="tel" id="lead-phone" class="form-input" placeholder="(51) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label for="lead-type" class="form-label">Onde deseja instalar?</label>
+              <select id="lead-type" class="form-select">
+                <option value="residential">Minha Residência</option>
+                <option value="commercial" selected>Minha Empresa / Comércio</option>
+                <option value="industrial">Minha Indústria / Galpão</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lead-bill" class="form-label">Qual o valor médio da sua conta de luz?</label>
+            <select id="lead-bill" class="form-select">
+              <option value="under500">Até R$ 500</option>
+              <option value="500to1500" selected>R$ 500 a R$ 1.500</option>
+              <option value="1500to3000">R$ 1.500 a R$ 3.000</option>
+              <option value="above3000">Acima de R$ 3.000</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label for="lead-msg" class="form-label">Mensagem Adicional (Opcional)</label>
+            <textarea id="lead-msg" class="form-textarea" placeholder="Caso deseje, informe mais detalhes do imóvel ou consumo."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-lead-submit">Solicitar Orçamento Gratuito</button>
+          
+          <div id="lead-form-feedback" style="display: none; margin-top: 16px; padding: 12px; border-radius: var(--border-radius); font-size: 0.9rem; text-align: center;"></div>
+        </form>
+      </div>
     </div>
   </section>
 
