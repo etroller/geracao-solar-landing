@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formFeedback.style.border = '2px solid #FFC815';
           formFeedback.innerHTML = `
             <span style="color:#FFC815; font-size:1.1rem; font-weight:800; display:block; margin-bottom:4px;">✓ Solicitado com Sucesso!</span>
-            Obrigado, <strong>${name}</strong>. Nosso Engenheiro Eletricista recebeu seus dados. Entraremos em contato em breve.
+            Obrigado, ${name}. Retornaremos em breve.
           `;
           
           leadForm.reset();

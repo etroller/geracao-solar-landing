@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       formFeedback.innerHTML = `
         <span style="color:#FFC815; font-size:1.1rem; font-weight:800; display:block; margin-bottom:4px;">✓ Solicitado com Sucesso!</span>
-        Obrigado, <strong>${name}</strong>. Nossa equipe técnica de engenharia já recebeu seus dados e iniciou a análise preliminar da sua rede. Entraremos em contato via telefone/WhatsApp o mais breve possível.
+        Obrigado, ${name}. Retornaremos em breve.
       `;
 
       // Resetar formulário
