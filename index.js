@@ -129,9 +129,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
+     GERENCIAMENTO DE UTMS (PROVA DE ORIGEM DO LEAD)
+     ========================================================================== */
+  function captureAndStoreUtms() {
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    utmParams.forEach(param => {
+      const val = urlParams.get(param);
+      if (val) {
+        sessionStorage.setItem(param, val);
+      }
+    });
+  }
+
+  function getStoredUtms() {
+    const utms = {};
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+    
+    utmParams.forEach(param => {
+      const val = sessionStorage.getItem(param) || new URLSearchParams(window.location.search).get(param);
+      if (val) {
+        utms[param] = val;
+      }
+    });
+    
+    return utms;
+  }
+
+  // Executa captura de parâmetros de anúncio
+  captureAndStoreUtms();
+
+  /* ==========================================================================
      CONFIGURAÇÃO DO WEBHOOK DO N8N
      ========================================================================== */
-  // Substitua a URL abaixo pela URL do nó Webhook gerada no seu painel do n8n
   const N8N_WEBHOOK_URL = 'https://webhook.geracaosolarengenharia.com.br/webhook/geracao-solar-leads';
 
   async function enviarWebhook(data) {
@@ -142,6 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
 
+    const utms = getStoredUtms();
+
     try {
       const response = await fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
@@ -150,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify({
           ...data,
+          ...utms,
           submittedAt: new Date().toISOString(),
           sourceUrl: window.location.href
         })
