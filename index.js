@@ -202,6 +202,68 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
+     MÁSCARA E VALIDAÇÃO DE WHATSAPP (PREVENÇÃO DE ERROS)
+     ========================================================================== */
+  function aplicarMascaraTelefone(inputElement) {
+    if (!inputElement) return;
+    
+    inputElement.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+      
+      // Limita a 11 dígitos
+      if (val.length > 11) {
+        val = val.slice(0, 11);
+      }
+      
+      if (val.length > 10) {
+        e.target.value = `(${val.slice(0, 2)}) ${val.slice(2, 7)}-${val.slice(7)}`;
+      } else if (val.length > 6) {
+        e.target.value = `(${val.slice(0, 2)}) ${val.slice(2, 6)}-${val.slice(6)}`;
+      } else if (val.length > 2) {
+        e.target.value = `(${val.slice(0, 2)}) ${val.slice(2)}`;
+      } else if (val.length > 0) {
+        e.target.value = `(${val}`;
+      } else {
+        e.target.value = '';
+      }
+    });
+  }
+
+  function validarTelefone(phoneStr) {
+    const cleaned = phoneStr.replace(/\D/g, '');
+    if (cleaned.length !== 10 && cleaned.length !== 11) {
+      return { valido: false, erro: 'Número incompleto. Insira o DDD + número (ex: 51 98585-7422).' };
+    }
+    
+    const ddd = parseInt(cleaned.slice(0, 2));
+    if (ddd < 11 || ddd > 99) {
+      return { valido: false, erro: 'DDD inválido. Por favor, insira um DDD válido (ex: 51).' };
+    }
+    
+    // Evita sequências de dígitos repetidos como 9999999999
+    if (/^(\d)\1+$/.test(cleaned)) {
+      return { valido: false, erro: 'Número inválido. Evite sequências de números repetidos.' };
+    }
+    
+    return { valido: true, cleaned: cleaned };
+  }
+
+  function padronizarTelefone(cleaned) {
+    // Adiciona o DDI 55 (Brasil) caso não exista (padrão E.164 limpo para n8n/WhatsApp APIs)
+    if (cleaned.length === 10 || cleaned.length === 11) {
+      return '55' + cleaned;
+    }
+    return cleaned;
+  }
+
+  // Inicializa as máscaras nos campos de telefone
+  const heroWhatsappInput = document.getElementById('hero-whatsapp');
+  const leadPhoneInput = document.getElementById('lead-phone');
+
+  aplicarMascaraTelefone(heroWhatsappInput);
+  aplicarMascaraTelefone(leadPhoneInput);
+
+  /* ==========================================================================
      6. FORM SUBMISSION (BUILT FOR HIGH CONVERSION)
      ========================================================================== */
   const leadForm = document.getElementById('orcamento-form');
@@ -211,6 +273,20 @@ document.addEventListener('DOMContentLoaded', () => {
   leadForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const phoneRaw = document.getElementById('lead-phone').value;
+    const validacao = validarTelefone(phoneRaw);
+    
+    if (!validacao.valido) {
+      // Exibe erro no feedback do formulário
+      formFeedback.style.display = 'block';
+      formFeedback.style.backgroundColor = '#FFF0F0';
+      formFeedback.style.color = '#D00000';
+      formFeedback.style.border = '2px solid #D00000';
+      formFeedback.innerHTML = `<strong>Erro:</strong> ${validacao.erro}`;
+      formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
     // Desabilitar o botão e iniciar animação de carregamento
     submitBtn.disabled = true;
     submitBtn.textContent = 'Processando Dados...';
@@ -218,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = document.getElementById('lead-name').value;
     const email = document.getElementById('lead-email').value;
-    const phone = document.getElementById('lead-phone').value;
     const type = document.getElementById('lead-type').value;
     const bill = document.getElementById('lead-bill').value;
     const msg = document.getElementById('lead-msg').value;
@@ -227,7 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
       formName: 'contato-rodape',
       name: name,
       email: email,
-      phone: phone,
+      phone: padronizarTelefone(validacao.cleaned),
+      phoneOriginal: phoneRaw,
       installationType: type,
       electricBillRange: bill,
       message: msg
@@ -278,20 +354,41 @@ document.addEventListener('DOMContentLoaded', () => {
   heroForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const whatsappRaw = document.getElementById('hero-whatsapp').value;
+    const validacao = validarTelefone(whatsappRaw);
+
+    if (!validacao.valido) {
+      heroFormFeedback.style.display = 'block';
+      heroFormFeedback.style.backgroundColor = '#FFF0F0';
+      heroFormFeedback.style.color = '#D00000';
+      heroFormFeedback.style.border = '2px solid #D00000';
+      heroFormFeedback.innerHTML = `<strong>Erro:</strong> ${validacao.erro}`;
+      
+      // Oculta o feedback de erro depois de 6 segundos
+      setTimeout(() => {
+        heroFormFeedback.style.opacity = '0';
+        setTimeout(() => {
+          heroFormFeedback.style.display = 'none';
+          heroFormFeedback.style.opacity = '1';
+        }, 500);
+      }, 6000);
+      return;
+    }
+
     heroSubmitBtn.disabled = true;
     heroSubmitBtn.textContent = 'Enviando...';
     heroSubmitBtn.style.opacity = '0.8';
 
     const name = document.getElementById('hero-name').value;
     const city = document.getElementById('hero-city').value;
-    const whatsapp = document.getElementById('hero-whatsapp').value;
     const installTime = document.getElementById('hero-install-time').value;
 
     const data = {
       formName: 'lead-hero',
       name: name,
       city: city,
-      phone: whatsapp,
+      phone: padronizarTelefone(validacao.cleaned),
+      phoneOriginal: whatsappRaw,
       installTime: installTime
     };
 
