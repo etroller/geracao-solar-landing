@@ -73,14 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
         billDisplay.textContent = `R$ ${conta.toLocaleString('pt-BR')}`;
       }
 
-      // Parâmetros de economia considerando perdas de 18% e a Lei 14.300 em 2026 no RS
-      // RGE possui tarifas de energia um pouco mais altas que a Certel (cooperativa)
-      let fatorEconomia = 0.91; // Cooperativas (Certel, Certaja, Cerfox)
-      let fatorPayback = 3.6;
+      // Parâmetros de economia considerando perdas de 18% e a Lei 14.300 (75% Fio B + ICMS na TUSD)
+      let fatorEconomia = 0.70; // Cooperativas (Certel, Certaja, Cerfox): economia de 70%
+      let fatorPayback = 5.2;   // Payback estimado de 5.2 anos
       
       if (concessionaria === 'rge' || concessionaria === 'ceee') {
-        fatorEconomia = 0.93;   // Concessionárias (RGE, CEEE)
-        fatorPayback = 3.4;     // Payback ligeiramente menor pela tarifa cheia
+        fatorEconomia = 0.72;   // Concessionárias (RGE, CEEE): economia de 72%
+        fatorPayback = 4.8;     // Payback um pouco menor de 4.8 anos pela tarifa alta
       }
 
       // 1. Economia Mensal

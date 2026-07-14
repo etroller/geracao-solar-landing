@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const simulatorCta = document.getElementById('sim-submit-btn');
   const leadBillSelect = document.getElementById('lead-bill');
 
-  // Parâmetros Técnicos atualizados para 2026 (Lei 14.300 - Cobrança de 60% do Fio B)
+  // Parâmetros Técnicos atualizados para considerar a cobrança de 75% do Fio B e a incidência de ICMS na TUSD
   const CUSTO_MINIMO_CONEXAO = 85.00; // Taxa de disponibilidade média em R$ (trifásico)
-  const FATOR_FIO_B_2026 = 0.84; // Impacto da cobrança de 60% do Fio B na parcela injetada
+  const FATOR_FIO_B_TUSD_ICMS = 0.70; // Impacto da cobrança de 75% do Fio B e ICMS sobre a TUSD (economia média de 70% na injeção)
   
   function calculateEconomy(billValue) {
     billValue = parseFloat(billValue);
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Mostrar valor atual no slider
     billDisplay.textContent = `R$ ${billValue.toLocaleString('pt-BR')}`;
 
-    // 2. A economia líquida em 2026 deduz o custo de conexão e a tarifa de injeção (60% do Fio B)
-    let economiaMensal = (billValue - CUSTO_MINIMO_CONEXAO) * FATOR_FIO_B_2026;
+    // 2. A economia líquida deduz o custo de conexão e a incidência de taxas regulatórias
+    let economiaMensal = (billValue - CUSTO_MINIMO_CONEXAO) * FATOR_FIO_B_TUSD_ICMS;
     if (economiaMensal < 0) economiaMensal = 0;
 
     const economiaAnual = economiaMensal * 12;
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const investimentoEstimado = 9500 + (billValue * 18.5);
     let paybackAnos = investimentoEstimado / economiaAnual;
     
-    // Forçar o payback a limites realistas de mercado em 2026 (4.2 a 6.2 anos no Sudeste devido ao Fio B)
-    if (paybackAnos < 4.2) paybackAnos = 4.2;
-    if (paybackAnos > 6.2) paybackAnos = 6.2;
+    // Forçar o payback a limites realistas de mercado (4.8 a 6.8 anos devido a 75% do Fio B e ICMS na TUSD)
+    if (paybackAnos < 4.8) paybackAnos = 4.8;
+    if (paybackAnos > 6.8) paybackAnos = 6.8;
 
     // 4. Exibir resultados no painel com micro-efeitos de transição
     updateDisplayWithFade(monthlySaveDisplay, `R$ ${Math.round(economiaMensal).toLocaleString('pt-BR')}`);
