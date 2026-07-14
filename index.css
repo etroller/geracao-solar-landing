@@ -1889,11 +1889,23 @@ button, input, select, textarea {
   .hero-content {
     margin: 0 auto;
     align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-badge-authority {
     align-self: center;
     margin: 0 auto 24px auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-badge-authority span {
+    white-space: normal;
+    text-align: center;
   }
 
   .hero-description {
@@ -1904,15 +1916,44 @@ button, input, select, textarea {
     align-items: center;
     justify-content: center;
     margin: 0 auto 32px auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-btn-important {
+    width: 100%;
+    max-width: 340px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .hero-social-proof {
     text-align: center;
     margin: 0 auto 32px auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .stars-row {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hero-metrics-cards {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .metric-card {
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .hero-image-box {
