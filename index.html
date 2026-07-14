@@ -34,7 +34,7 @@
       <nav class="navbar-menu" id="navbar-menu">
         <a href="index.html" class="navbar-link active">Início</a>
         <a href="projetos.html" class="navbar-link">Projetos</a>
-        <a href="artigos.html" class="navbar-link">Artigos & SEO</a>
+        <a href="artigos.html" class="navbar-link">Artigos</a>
         <a href="#simulador" class="navbar-link">Simulador</a>
         <a href="#contato" class="navbar-link">Contato</a>
       </nav>
@@ -74,8 +74,8 @@
         <img src="assets/FundoHero.png" alt="Plano de fundo Geração Solar" loading="eager">
       </picture>
     </div>
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
+    <div class="container hero-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; text-align: center;">
+      <div class="hero-content reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 0 auto;">
         <div class="hero-badge-authority">
           <svg class="badge-icon" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M2.166 4.9A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 4.9c-.133 5.59-3.83 10.29-9 11.622-5.17-1.33-8.867-6.03-9-11.622zm8.79 3.29a1 1 0 00-1.415-1.413L7 9.172 5.707 7.879a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l3.5-3.5z" clip-rule="evenodd" />
@@ -88,7 +88,7 @@
           Reduza sua conta de energia em até 95% com projetos solares residenciais, comerciais e rurais desenvolvidos de acordo com as normas da RGE e Certel. Segurança e retorno garantidos por engenharia especializada.
         </h2>
         
-        <div class="hero-ctas">
+        <div class="hero-ctas" style="justify-content: center; width: 100%;">
           <a href="orcamento/index.html" class="btn btn-primary hero-btn-important">Solicitar Orçamento Gratuito</a>
           <a href="#simulador" class="btn btn-secondary hero-btn-secondary" style="border: 2px solid var(--accent-orange); color: var(--accent-orange); background: transparent; padding: 16px 32px; font-weight: 700; border-radius: var(--border-radius); transition: var(--transition-fast);">Simular Economia</a>
         </div>
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Credibility Indicators -->
-        <div class="hero-metrics-cards">
+        <div class="hero-metrics-cards" style="justify-content: center; width: 100%; flex-wrap: wrap;">
           <div class="metric-card">
             <div class="metric-card-icon">🏆</div>
             <div class="metric-card-content">
@@ -128,28 +128,7 @@
         </div>
       </div>
       
-      <!-- Lado Direito: Card Institucional Premium -->
-      <div class="hero-form-box reveal reveal-delay-2">
-        <div class="hero-premium-form" style="background-color: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--border-radius-lg); padding: 32px; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 24px;">
-          <span style="background-color: rgba(242,92,5,0.08); color: var(--accent-orange); font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 30px; align-self: flex-start; text-transform: uppercase; letter-spacing: 0.05em;">Presença Local</span>
-          <h3 style="font-size: 1.45rem; font-family: var(--font-title); font-weight: 800; color: var(--text-dark); margin: 0;">Sua usina homologada com velocidade e engenharia</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted-dark); margin: 0; line-height: 1.6;">
-            Como nossa sede fica no <strong>Vale do Taquari (Lajeado - RS)</strong>, nossa equipe técnica resolve toda a burocracia de homologação junto às concessionárias locais como <strong>Certel e RGE</strong> com velocidade recorde.
-          </p>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; font-weight: 600; color: var(--text-dark);">
-            <li style="display: flex; align-items: center; gap: 10px;">
-              <span style="color: #198754;">✓</span> Projetos assinados por Engenheiro Eletricista
-            </li>
-            <li style="display: flex; align-items: center; gap: 10px;">
-              <span style="color: #198754;">✓</span> Visitas de vistoria técnica presencial rápida
-            </li>
-            <li style="display: flex; align-items: center; gap: 10px;">
-              <span style="color: #198754;">✓</span> Monitoramento ativo de geração pós-obra
-            </li>
-          </ul>
-          <a href="orcamento/index.html" class="btn btn-orange" style="text-align: center; text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em; padding: 16px 20px;">Fazer Orçamento Conosco</a>
-        </div>
-      </div>
+      
     </div>
   </section>
 
