@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       formFeedback.innerHTML = `
         <span style="color:#FFC815; font-size:1.1rem; font-weight:800; display:block; margin-bottom:4px;">✓ Solicitado com Sucesso!</span>
-        Obrigado, <strong>${name}</strong>. Nossa equipe técnica de engenharia já recebeu seus dados e iniciou a análise preliminar da sua rede. Entraremos em contato via telefone/WhatsApp em até 2 horas.
+        Obrigado, <strong>${name}</strong>. Nossa equipe técnica de engenharia já recebeu seus dados e iniciou a análise preliminar da sua rede. Entraremos em contato via telefone/WhatsApp o mais breve possível.
       `;
 
       // Resetar formulário
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       heroFormFeedback.innerHTML = `
         <span style="font-size:1rem; font-weight:800; display:block; margin-bottom:2px;">✓ Enviado!</span>
-        Obrigado, ${name}. Retornaremos em até 2 horas.
+        Obrigado, ${name}. Retornaremos em breve.
       `;
 
       heroForm.reset();
