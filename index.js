@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const name = document.getElementById('lead-name').value;
         const email = document.getElementById('lead-email').value;
-        const type = document.getElementById('lead-type').value;
+        const city = document.getElementById('lead-city').value;
         const bill = document.getElementById('lead-bill').value;
         const msg = document.getElementById('lead-msg').value;
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
           email: email,
           phone: padronizarTelefone(validacao.cleaned),
           phoneOriginal: phoneRaw,
-          installationType: type,
+          city: city,
           electricBillRange: bill,
           message: msg
         };
