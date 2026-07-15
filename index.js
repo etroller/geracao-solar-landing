@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Webhook and UTM configuration
-    const N8N_WEBHOOK_URL = 'https://webhook.geracaosolarengenharia.com.br/webhook/geracao-solar-leads';
+    const N8N_WEBHOOK_URL = 'https://n8n.geracaosolarengenharia.com.br/webhook/geracao-solar-leads';
 
     function getStoredUtms() {
       const utms = {};

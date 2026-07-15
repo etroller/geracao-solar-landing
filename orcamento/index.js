@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      CONFIGURAÇÃO DO WEBHOOK DO N8N
      ========================================================================== */
-  const N8N_WEBHOOK_URL = 'https://webhook.geracaosolarengenharia.com.br/webhook/geracao-solar-leads';
+  const N8N_WEBHOOK_URL = 'https://n8n.geracaosolarengenharia.com.br/webhook/geracao-solar-leads';
 
   async function enviarWebhook(data) {
     if (!N8N_WEBHOOK_URL || N8N_WEBHOOK_URL.includes('seu-servidor-n8n.com')) {
