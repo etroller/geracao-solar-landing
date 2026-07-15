@@ -248,6 +248,18 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         enviarWebhook(data).then(() => {
+          // Push to Google Tag Manager dataLayer
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'formulario_preenchido',
+            lead_name: name,
+            lead_email: email,
+            lead_phone: padronizarTelefone(validacao.cleaned),
+            lead_city: city,
+            lead_bill: bill,
+            lead_form_name: 'contato-home-raiz'
+          });
+
           formFeedback.style.display = 'block';
           formFeedback.style.backgroundColor = '#1C1F22';
           formFeedback.style.color = '#FFFFFF';

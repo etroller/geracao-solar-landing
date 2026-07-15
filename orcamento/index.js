@@ -311,6 +311,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Enviar dados assincronamente ao webhook do n8n
     enviarWebhook(data).then(() => {
+      // Push to Google Tag Manager dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'formulario_preenchido',
+        lead_name: name,
+        lead_email: email,
+        lead_phone: padronizarTelefone(validacao.cleaned),
+        lead_city: city,
+        lead_bill: bill,
+        lead_form_name: 'contato-rodape'
+      });
+
       // Exibir feedback positivo de sucesso com as cores da Geração Solar
       formFeedback.style.display = 'block';
       formFeedback.style.backgroundColor = '#1C1F22'; // Grafite escuro
@@ -394,6 +406,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Enviar dados assincronamente ao webhook do n8n
     enviarWebhook(data).then(() => {
+      // Push to Google Tag Manager dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'formulario_preenchido',
+        lead_name: name,
+        lead_phone: padronizarTelefone(validacao.cleaned),
+        lead_city: city,
+        lead_install_time: installTime,
+        lead_form_name: 'lead-hero'
+      });
+
       heroFormFeedback.style.display = 'block';
       heroFormFeedback.style.backgroundColor = '#FFFFFF';
       heroFormFeedback.style.color = '#F25C05';
