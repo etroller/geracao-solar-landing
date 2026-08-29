@@ -476,7 +476,8 @@ button, input, select, textarea {
   color: var(--accent-orange);
 }
 
-.hero-description {
+.hero-description,
+.hero-subtitle {
   font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   color: var(--text-muted-dark);
   font-weight: 500;
@@ -1910,7 +1911,8 @@ button, input, select, textarea {
     text-align: center;
   }
 
-  .hero-description {
+  .hero-description,
+  .hero-subtitle {
     margin: 0 auto 32px auto;
   }
   
