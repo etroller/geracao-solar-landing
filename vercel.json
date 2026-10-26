@@ -1,4 +1,77 @@
 {
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/posso-colugar-energia-solar-em-um-imovel-alugado",
+      "destination": "/posso-colocar-energia-solar-em-um-imovel-alugado/",
+      "permanent": true
+    },
+    {
+      "source": "/respostas-para-as-3-duvidas-mais-comuns-de-quem-esta-pensando-em-gerar-sua-propria-energia",
+      "destination": "/como-funciona-a-energia-solar/",
+      "permanent": true
+    },
+    {
+      "source": "/energia-fotovoltaica-proporciona-mais-economia-e-sustentabilidade-no-dia-a-dia",
+      "destination": "/como-funciona-a-energia-solar/",
+      "permanent": true
+    },
+    {
+      "source": "/financiamentobv",
+      "destination": "/financiamento-energia-solar-rs-sicredi-cresol-banco-do-brasil/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos_item/:path*",
+      "destination": "/projetos.html",
+      "permanent": true
+    },
+    {
+      "source": "/projetos",
+      "destination": "/projetos.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/artigos.html",
+      "permanent": true
+    },
+    {
+      "source": "/artigos",
+      "destination": "/artigos.html",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/artigos.html",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/artigos.html",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/artigos.html",
+      "permanent": true
+    },
+    {
+      "source": "/depoimentos",
+      "destination": "/#depoimentos",
+      "permanent": true
+    },
+    {
+      "source": "/depoimentos/:path*",
+      "destination": "/#depoimentos",
+      "permanent": true
+    },
+    {
+      "source": "/loja",
+      "destination": "/orcamento/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
